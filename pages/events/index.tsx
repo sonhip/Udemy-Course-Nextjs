@@ -1,9 +1,8 @@
-import React from "react";
 import EventList from "../../components/events/event-list";
-import { getFeaturedEvents } from "../../dummy-data.";
+import { getAllEvents } from "../../dummy-data.";
 
 function EventsPage() {
-  const featuredEvents = getFeaturedEvents();
+  const featuredEvents = getAllEvents();
   return (
     <div>
       <EventList items={featuredEvents} />
