@@ -2,15 +2,22 @@ import Link from "next/link";
 import classes from "./button.module.css";
 
 interface ButtonProps {
-  link: string;
+  link?: string;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 function Button(props: ButtonProps) {
-  const { link, children } = props;
+  const { link, children, onClick } = props;
+  if (link)
+    return (
+      <Link legacyBehavior href={link}>
+        <a className={classes.btn}>{children}</a>
+      </Link>
+    );
   return (
-    <Link legacyBehavior href={link}>
-      <a className={classes.btn}>{children}</a>
-    </Link>
+    <button onClick={onClick} className={classes.btn}>
+      {children}
+    </button>
   );
 }
 
