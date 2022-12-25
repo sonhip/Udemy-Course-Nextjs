@@ -8,14 +8,14 @@ function EventsPage() {
   const route = useRouter();
 
   const findEventHandler = (year: string, month: string) => {
-    const fullPath:string = `/events/${year}/${month}`;
+    const fullPath: string = `/events/${year}/${month}`;
     route.push(fullPath);
-  }
+  };
 
   return (
     <>
       <EventsSearch onSearch={findEventHandler} />
-      <EventList items={featuredEvents} />
+      <EventList list={featuredEvents} />
     </>
   );
 }
